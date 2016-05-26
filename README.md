@@ -25,7 +25,7 @@ Refer to the sample in the `/docs` folder
 
 
 ### Todos
-* Fix formatting for EEEE reports
 * Add helper commands for including images
 * Figure out better way for variables than `\newcommand`
 * Reorder variables from least modified to most
+* Optional parameters

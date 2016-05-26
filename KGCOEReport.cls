@@ -7,7 +7,7 @@
 %%%%%%% Required packages
 \RequirePackage{multicol} %Make columns
 \RequirePackage[margin=1in]{geometry} %Change margins
-\RequirePackage{color}  % Coloring for the RIT text in EEEE reports
+\RequirePackage[most]{tcolorbox}  % For the "RIT" box on EEEE cover
 
 \setlength{\parindent}{0pt} % Don't indent paragraphs
 
@@ -70,14 +70,13 @@
 % Write a EE report
 \DeclareOption{EEEE}{
 	\renewcommand{\maketitle}{%
+
+		\begin{flushright}\begin{tcolorbox}[colback=black,coltext=white,halign=center,boxrule=0pt,
+			sharp corners, width=0.5\textwidth, fontupper={\Large \bfseries}]
+			Rochester Institute of \\ Technology
+		\end{tcolorbox}\end{flushright}
+
 		\huge
-		\hfill\colorbox{black}{
-			\color{white}
-			\textbf{Rochester Institute of}\\\\
-			\textbf{Technology}
-		}
-
-
 		\textbf{\classCode \ - \className \ Technical Memo}\\
 		\normalsize
 
@@ -98,6 +97,3 @@
 % Pass any other options to
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
 \ProcessOptions
-
-
-
