@@ -9,15 +9,15 @@ CMPE_sample:
     - pdflatex CMPE_sample.tex
   artifacts:
     paths:
-      - CMPE_sample.pdf
+      - docs/CMPE_sample.pdf
   after_script:
-    - rm KGCOEReport.cls
+    - rm docs/KGCOEReport.cls
 
 EEEE_sample:
   script:
     - pdflatex EEEE_sample.tex
   artifacts:
     paths:
-    - EEEE_sample.pdf
+    - docs/EEEE_sample.pdf
   after_script:
-    - rm KGCOEReport.cls
+    - rm docs/KGCOEReport.cls
