@@ -1,0 +1,13 @@
+before_script:
+  - apt-get update -qq && apt-get install -y -qq texlive-latex-recommended
+  - pdflatex -version
+  - cd docs
+  - cp ../KGCOEReport.cls .
+
+CMPE_sample:
+  script:
+    - pdflatex CMPE_sample.tex
+
+EEEE_sample:
+  script:
+    - pdflatex EEEE_sample.tex
