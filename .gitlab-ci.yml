@@ -1,5 +1,5 @@
 before_script:
-  - apt-get update -qq && apt-get install -y -qq texlive-latex-recommended
+  - apt-get -qq update && apt-get -y -qq install texlive-latex-extra
   - pdflatex -version
   - cd docs
   - cp ../KGCOEReport.cls .
