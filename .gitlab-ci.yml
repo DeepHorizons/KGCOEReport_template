@@ -1,24 +1,24 @@
 before_script:
   - apt-get -qq update && apt-get -y -qq install texlive-latex-base
+  - tlmgr init-usertree
   - tlmgr install tcolorbox
   - pdflatex -version
   - cd docs
   - cp ../KGCOEReport.cls .
 
+after_script:
+  - rm docs/KGCOEReport.cls
+
 CMPE_sample:
   script:
-    - pdflatex CMPE_sample.tex
+    - pdflatex $CI_BUILD_NAME.tex
   artifacts:
     paths:
-      - docs/CMPE_sample.pdf
-  after_script:
-    - rm docs/KGCOEReport.cls
+      - docs/$CI_BUILD_NAME.pdf
 
 EEEE_sample:
   script:
-    - pdflatex EEEE_sample.tex
+    - pdflatex $CI_BUILD_NAME.tex
   artifacts:
     paths:
-    - docs/EEEE_sample.pdf
-  after_script:
-    - rm docs/KGCOEReport.cls
+    - docs/$CI_BUILD_NAME.pdf
