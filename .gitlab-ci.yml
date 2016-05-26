@@ -1,8 +1,5 @@
 before_script:
-  - apt-get -qq update && apt-get -qq -y install wget
-  - wget https://github.com/scottkosty/install-tl-ubuntu/raw/master/install-tl-ubuntu && chmod +x ./install-tl-ubuntu
-  - ./install-tl-ubuntu
-  - tlmgr install tcolorbox
+  - apt-get -qq update && apt-get -qq -y install texlive-latex-extra
   - pdflatex -version
   - cd docs
   - cp ../KGCOEReport.cls .
