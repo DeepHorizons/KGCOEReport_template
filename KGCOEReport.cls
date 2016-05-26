@@ -83,8 +83,13 @@
 		\noindent
 		\begin{tabular}{ll}
 		\textbf{From:} &\name\\
-		\textbf{Partner:} &\partnerName\\
-		\\
+
+		% Optional parameter of partner
+		\ifdefined\partnerName
+			\textbf{Partner:} &\partnerName\\
+			\\
+		\fi
+
 		\textbf{To:} &\TAs \ | Section \LabSectionNum\\
 		\textbf{Date:} &Performed: \dateDone; Due: \dateSubmitted\\
 		\textbf{Subject:} &Lab \exerciseNumber: \exerciseDescription
