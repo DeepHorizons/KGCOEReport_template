@@ -34,5 +34,6 @@ Examples are provides in the enclosing brackets.
 ### Required
 * `\className`: The full name of the class `[Electronics 1]`
 * `\TAs`: A list of TA's separated by ands `[TA One and TA Two and TA Three]`
+
 ### Optional
 * `\partnerName`: The name of your partner `[Gary Lake]`
