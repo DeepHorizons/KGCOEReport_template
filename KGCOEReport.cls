@@ -21,6 +21,8 @@
 
 %%%%%%% Write a CE report
 \DeclareOption{CMPE}{
+	\newcommand{\KGCOEDocType}{CMPE}
+
 	\renewcommand{\maketitle}{%
 	\vspace*{2.5cm}
 
@@ -67,8 +69,10 @@
 		\newpage
 	}
 }
-% Write a EE report
+%%%%%%% Write a EE report
 \DeclareOption{EEEE}{
+	\newcommand{\KGCOEDocType}{EEEE}
+
 	\renewcommand{\maketitle}{%
 
 		\begin{flushright}\begin{tcolorbox}[colback=black,coltext=white,halign=center,boxrule=0pt,
@@ -102,3 +106,6 @@
 % Pass any other options to
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
 \ProcessOptions
+
+%%%%%%% Check to see if we were given a corret department code
+\@ifundefined{KGCOEDocType}{\ClassError{KGCOEReport}{Unrecognized Department Code}{Available department codes are CMPE, EEEE}}{}
