@@ -25,7 +25,9 @@ name, exercise number, and others.
 Refer to the `README.md` and samples in the `/docs` folder
 
 ### Pandoc
-Install Pandoc, copy the template and the class file into the same folder as the `.md` file
+Reports can also be written in Markdown and converted to a LaTeX formatted PDF using [Pandoc](http://pandoc.org/).
+
+To use, install [Pandoc](http://pandoc.org/installing.html), copy the template and the class file into the same folder as the `.md` file,
 and use the following command:
 ```
 pandoc <lab file>.md --template=pandoc_full_template.tex -s -o <output file>.pdf

@@ -1,12 +1,15 @@
 before_script:
   - apt-get -qq update
-  - apt-get -qq -y install texlive-latex-extra > /dev/null
+  - apt-get -qq -y install texlive-latex-extra pandoc > /dev/null
   - pdflatex -version
+  - pandoc --version
   - cd docs
   - cp ../KGCOEReport.cls .
+  - cp ../pandoc_full_template.tex .
 
 after_script:
   - rm docs/KGCOEReport.cls
+  - rm docs/pandoc_full_template.tex
 
 .generic_sample: &generic_def
   script:
@@ -20,3 +23,10 @@ CMPE_sample:
 
 EEEE_sample:
   <<: *generic_def
+
+GENERIC_sample_pandoc:
+  script:
+    - pandoc $CI_BUILD_NAME.md --template=pandoc_full_template.tex -s -o $CI_BUILD_NAME.pdf
+  artifacts:
+    paths:
+      - docs/$CI_BUILD_NAME.pdf
