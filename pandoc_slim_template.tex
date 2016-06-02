@@ -1,0 +1,36 @@
+% pandoc_slim_template
+% A template for generating KGCOE reports
+% https://kgcoe-git.rit.edu/jgm6496/KGCOEReport_template
+%
+% This is a derivitive the skeleton report with a few extras commands for pandoc
+% It has less bells and whistles than the full and produces slightly smaller documents
+
+\documentclass[$department$]{KGCOEReport}
+
+\newcommand{\classCode}{$classCode$}  % 4 char code with number
+\newcommand{\className}{$className$}  % Full name of class
+\newcommand{\exerciseNumber}{$exerciseNumber$}  % The number of the exercise
+\newcommand{\exerciseDescription}{$exerciseDescription$}  %  A short description of the exercise
+\newcommand{\name}{$name$}  % Your first and last name
+\newcommand{\partnerName}{$partnerName$}  % Your partners first and last name, (if available)
+\newcommand{\dateDone}{$dateDone$}  % The date the lab was started in ISO 8601 format [yyyy-mm-dd]
+\newcommand{\dateSubmitted}{$dateSubmitted$}  % The date the lab was submitted in ISO 8601 format [yyyy-mm-dd]
+\newcommand{\LabSectionNum}{$LabSectionNum$}  % The lab section you are in
+\newcommand{\LabInstructor}{$LabInstructor$}  % The name of your professor for lab
+\newcommand{\TAs}{$TAs$}  % Your TA's first and last names
+\newcommand{\LectureSectionNum}{$LectureSectionNum$}  % The lecture section you are in
+\newcommand{\LectureInstructor}{$LectureInstructor$}  % The name of your professor for lecture
+
+$if(numbersections)$
+\setcounter{secnumdepth}{5}
+$else$
+\setcounter{secnumdepth}{0}
+$endif$
+
+
+\begin{document}
+\maketitle
+
+$body$
+
+\end{document}

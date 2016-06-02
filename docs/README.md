@@ -37,3 +37,112 @@ Examples are provides in the enclosing brackets.
 
 ### Optional
 * `\partnerName`: The name of your partner `[Gary Lake]`
+
+
+# Pandoc template
+[Pandoc](http://pandoc.org/) is a markup converter.
+In particular, it can convert [Markdown](https://en.wikipedia.org/wiki/Markdown) to a LaTeX formatted PDF.
+In this way, much of the LaTeX boilerplate is done away with.
+
+## Usage
+To use, install [Pandoc](http://pandoc.org/installing.html) and copy the template (along with the KGCOEReport class file)
+to your lab folder.
+Once the report is written, the PDF can be compiled by executing
+
+```
+pandoc <lab file>.md --template=pandoc_full_template.tex -s -o <output file>.pdf
+```
+
+The report must end in `.md` to signify that it is a Markdown file.
+
+## Writing a report in Markdown
+Markdown is made to be readable, both in text and formatted, and is very simple to write.
+You can refer to the `GENERIC_sample_pandoc.md` to get an idea
+
+### Header
+To allow Pandoc to format your document correctly, a YAML header must first be added
+containing the variables.
+(This header is non-standard Markdown and is purely used for Pandoc)
+
+All variables are the same as above, with the only difference is that the
+`department` key is added to know what to format the document as.
+A sample is as follows
+
+```
+---
+department: CMPE
+classCode: CMPE 101
+className: Intro to Computer Engineering
+exerciseNumber: 1
+exerciseDescription: Measuring resistance
+name: Jeff Mahoney
+partnerName: Gary Lake
+dateDone: 2016-09-19
+dateSubmitted: 2016-09-2016-09-26
+LabSectionNum: L03
+LabInstructor: Professor Professor
+TAs: TA One and TA Two and TA Three
+LectureSectionNum: 02
+LectureInstructor: Professor X
+
+documentclass: KGCOEReport
+numbersections: false
+---
+```
+
+The `documentclass` section tells Pandoc to use our class file.
+The `numbersections` key is used to tell Pandoc if we want numbered sections or not.
+For KGCOE reports, sections are generally not numbered.
+
+### Body
+Everything after the header is what will be generated for the document.
+Regular text will show up as text in paragraphs.
+Paragraphs are sectioned of as a blank line between two sections of text.
+As in LaTeX, a newline at the end of a line is interpreted as a space.
+
+The following is a short list of commonly used formating syntax.
+There are far too many to cover, so refer to the [Pandoc User Guide](http://pandoc.org/README.html#pandocs-markdown)
+for more detail.
+
+#### Sections
+Sections are defined by `#`, one space, and then the section name
+
+```
+# Abstract
+```
+
+#### Math Equation
+Math equations use the `$` character.
+Equations are enclosed in these characters using the
+[LaTeX math formatting syntax](https://www.sharelatex.com/learn/Mathematical_expressions)
+
+A single `$` inlines an equation.
+There must not be any spaces between the opening `$` and the first character,
+and there must not be a space between the last character and the closing `$`
+
+```
+... $F = ma$ ...
+```
+
+A double `$$` centers the equation and puts it on a new line.
+The space requirement is not in effect for this.
+
+```
+...
+$$ F = -kx $$
+...
+```
+
+#### Images
+Images use the link syntax prepended with a `!`.
+The image caption is enclosed within `[]`, while the image location is enclosed within `()`.
+
+There must be a new line above and below the image line or Pandoc will attempt to inline the image (and fail.)
+
+```
+...
+
+![Graph of the waveforms](img/graph.png)
+
+...
+```
