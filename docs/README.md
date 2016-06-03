@@ -2,8 +2,9 @@ Documentation for KGCOEReport LaTeX Template
 ============================================
 
 # General Usage
-Stick the `KGCOEReport.cls` file in the same folder as the `.tex` document (or in a global location)
-and use it as the document class with the department code as an option
+Stick the `KGCOEReport.cls` file in the same folder as the `.tex` document
+(or in a global location) and use it as the document class with the department
+code as an option
 
 ```
 \documentclass[CMPE]{KGCOEReport}
@@ -16,18 +17,23 @@ Examples are provides in the enclosing brackets.
 ### Required
 * `\classCode`: The 4 character code and 3 digit number `[CMPE 160]`
 * `\exerciseNumber`: The exercise number `[1]` or `[One]`
-* `\exerciseDescription`: Short description of the exercise. Generally taken from the exercise write-up `[Characterizing a OPB745 Sensor]`
+* `\exerciseDescription`: Short description of the exercise. Generally taken
+  from the exercise write-up `[Characterizing a OPB745 Sensor]`
 * `\name`: Your name `[Jeff Mahoney]`
-* `\dateDone`: The date the lab was performed in ISO 8601 format. If done over several lab periods then the first date `[2016-09-19]`
+* `\dateDone`: The date the lab was performed in ISO 8601 format. If done over
+   several lab periods then the first date `[2016-09-19]`
 * `\dateSubmitted`: The date the report is due in ISO 8601 format `[2016-09-26]`
 * `\LabSectionNum`: The lab section number `[01]`
 
 ## CMPE Specific Variables
 ### Required
-* `\LabInstructor`: The name of the instructor for the lab section `[Professor Professor]`
+* `\LabInstructor`: The name of the instructor for the lab section
+  `[Professor Professor]`
 * `\LectureSectionNum`: The lecture section number `[03]`
-* `\LectureInstructor`: The name of the instructor for the lecture section `[Professor X]`
-* `\TAs`: A list of TA's separated by double backslashes `[TA One \\ TA Two \\ TA Three]`
+* `\LectureInstructor`: The name of the instructor for the lecture section
+  `[Professor X]`
+* `\TAs`: A list of TA's separated by double backslashes
+  `[TA One \\ TA Two \\ TA Three]`
 
 
 ## EEEE Specific Variables
@@ -41,13 +47,14 @@ Examples are provides in the enclosing brackets.
 
 # Pandoc template
 [Pandoc](http://pandoc.org/) is a markup converter.
-In particular, it can convert [Markdown](https://en.wikipedia.org/wiki/Markdown) to a LaTeX formatted PDF.
+In particular, it can convert [Markdown](https://en.wikipedia.org/wiki/Markdown)
+to a LaTeX formatted PDF.
 In this way, much of the LaTeX boilerplate is done away with.
 
 ## Usage
-To use, install [Pandoc](http://pandoc.org/installing.html) and copy the template (along with the KGCOEReport class file)
-to your lab folder.
-Once the report is written, the PDF can be compiled by executing
+To use, install [Pandoc](http://pandoc.org/installing.html) and copy the
+template (along with the KGCOEReport class file) to your lab folder.
+Once the report is written, the PDF can be compiled by executing:
 
 ```
 pandoc <lab file>.md --template=pandoc_full_template.tex -s -o <output file>.pdf
@@ -56,12 +63,13 @@ pandoc <lab file>.md --template=pandoc_full_template.tex -s -o <output file>.pdf
 The report must end in `.md` to signify that it is a Markdown file.
 
 ## Writing a report in Markdown
-Markdown is made to be readable, both in text and formatted, and is very simple to write.
-You can refer to the `GENERIC_sample_pandoc.md` to get an idea
+Markdown is made to be readable, both in text and formatted,
+and is very simple to write.
+You can refer to the `GENERIC_sample_pandoc.md` to get an idea.
 
 ### Header
-To allow Pandoc to format your document correctly, a YAML header must first be added
-containing the variables.
+To allow Pandoc to format your document correctly,
+a YAML header must first be added containing the variables.
 (This header is non-standard Markdown and is purely used for Pandoc)
 
 All variables are the same as above, with the only difference is that the
@@ -91,7 +99,8 @@ numbersections: false
 ```
 
 The `documentclass` section tells Pandoc to use our class file.
-The `numbersections` key is used to tell Pandoc if we want numbered sections or not.
+The `numbersections` key is used to tell Pandoc if we want
+numbered sections or not.
 For KGCOE reports, sections are generally not numbered.
 
 ### Body
@@ -104,7 +113,8 @@ The rules for whitespace and paragraphs are as follows:
 * A linebreak can be forced by adding 2 spaces to the end of a line.
 
 The following is a short list of commonly used formating syntax.
-There are far too many to cover, so refer to the [Pandoc User Guide](http://pandoc.org/README.html#pandocs-markdown)
+There are far too many to cover, so refer to the
+[Pandoc User Guide](http://pandoc.org/README.html#pandocs-markdown)
 for more detail.
 
 #### Sections
@@ -150,9 +160,11 @@ $$ F = -kx $$
 
 #### Images
 Images use the link syntax prepended with a `!`.
-The image caption is enclosed within `[]`, while the image location is enclosed within `()`.
+The image caption is enclosed within `[]`,
+while the image location is enclosed within `()`.
 
-There must be a new line above and below the image line or Pandoc will attempt to inline the image (and fail.)
+There must be a new line above and below the image line or
+Pandoc will attempt to inline the image (and fail).
 
 ```
 ...
