@@ -1,3 +1,6 @@
+% LaTex class file for generating KGCOE reports
+% https://kgcoe-git.rit.edu/jgm6496/KGCOEReport_template
+
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{KGCOEReport}[2016/05/25 Example LaTeX class]
 
