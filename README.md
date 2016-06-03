@@ -32,7 +32,7 @@ and use the following command:
 ```
 pandoc <lab file>.md --template=pandoc_full_template.tex -s -o <output file>.pdf
 ```
-The file must contain a header defining the variables for the report
+The file must contain a header defining the variables for the report.
 Refer to the `README.md` and sample in the `/docs` folder
 
 

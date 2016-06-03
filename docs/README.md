@@ -97,18 +97,33 @@ For KGCOE reports, sections are generally not numbered.
 ### Body
 Everything after the header is what will be generated for the document.
 Regular text will show up as text in paragraphs.
-Paragraphs are sectioned of as a blank line between two sections of text.
-As in LaTeX, a newline at the end of a line is interpreted as a space.
+
+The rules for whitespace and paragraphs are as follows:
+* Paragraphs are sectioned of as a blank line between two sections of text.
+* As in LaTeX, a newline at the end of a line is interpreted as a space.
+* A linebreak can be forced by adding 2 spaces to the end of a line.
 
 The following is a short list of commonly used formating syntax.
 There are far too many to cover, so refer to the [Pandoc User Guide](http://pandoc.org/README.html#pandocs-markdown)
 for more detail.
 
 #### Sections
-Sections are defined by `#`, one space, and then the section name
+Sections are defined by `#`.
+There must be a new line, the `#` character, one space,
+and then the section name followed by a newline.
+Subsections use `##`, subsubsections use `###`.
 
 ```
-# Abstract
+...
+
+# Design Methodology
+...
+
+## A Specific Part
+...
+
+### Even More Specific
+...
 ```
 
 #### Math Equation
