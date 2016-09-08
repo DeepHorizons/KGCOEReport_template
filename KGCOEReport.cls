@@ -110,5 +110,5 @@
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
 \ProcessOptions
 
-%%%%%%% Check to see if we were given a corret department code
+%%%%%%% Check to see if we were given a correct department code
 \@ifundefined{KGCOEDocType}{\ClassError{KGCOEReport}{Unrecognized Department Code}{Available department codes are CMPE, EEEE}}{}
