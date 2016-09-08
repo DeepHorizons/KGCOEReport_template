@@ -1,0 +1,100 @@
+
+% Default to the notebook output style
+((* if not cell_style is defined *))
+    ((* set cell_style = 'style_ipython.tplx' *))
+((* endif *))
+
+% Inherit from the specified cell style.
+((* extends cell_style *))
+
+
+%===============================================================================
+% Latex Article
+%===============================================================================
+
+((* block docclass *))
+    %This is a KGCOEReport jupyter template
+    ((* if "kgcoe" in nb.metadata *))
+        \documentclass[((( nb.metadata['kgcoe']['department'] )))]{KGCOEReport}
+     ((* else *))
+        \documentclass{article}
+    ((* endif *))
+((* endblock docclass *))
+
+
+
+((* block packages *))
+    
+    \usepackage[T1]{fontenc}
+    ((* if "kgcoe" not in nb.metadata *))
+        % Nicer default font (+ math font) than Computer Modern for most use cases
+        \usepackage{mathpazo}
+    ((* endif *))
+
+    % Basic figure setup, for now with no caption control since it's done
+    % automatically by Pandoc (which extracts ![](path) syntax from Markdown).
+    \usepackage{graphicx}
+    % We will generate all images so they have a width \maxwidth. This means
+    % that they will get their normal width if they fit onto the page, but
+    % are scaled down if they would overflow the margins.
+    \makeatletter
+    \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth
+    \else\Gin@nat@width\fi}
+    \makeatother
+    \let\Oldincludegraphics\includegraphics
+    % Set max figure width to be 80% of text width, for now hardcoded.
+    \renewcommand{\includegraphics}[1]{\Oldincludegraphics[width=.8\maxwidth]{#1}}
+    % Ensure that by default, figures have no caption (until we provide a
+    % proper Figure object with a Caption API and a way to capture that
+    % in the conversion process - todo).
+    \usepackage{caption}
+    \DeclareCaptionLabelFormat{nolabel}{}
+    \captionsetup{labelformat=nolabel}
+
+    \usepackage{adjustbox} % Used to constrain images to a maximum size 
+    \usepackage{xcolor} % Allow colors to be defined
+    \usepackage{enumerate} % Needed for markdown enumerations to work
+    \usepackage{geometry} % Used to adjust the document margins
+    \usepackage{amsmath} % Equations
+    \usepackage{amssymb} % Equations
+    \usepackage{textcomp} % defines textquotesingle
+    % Hack from http://tex.stackexchange.com/a/47451/13684:
+    \AtBeginDocument{%
+        \def\PYZsq{\textquotesingle}% Upright quotes in Pygmentized code
+    }
+    \usepackage{upquote} % Upright quotes for verbatim code
+    \usepackage{eurosym} % defines \euro
+    \usepackage[mathletters]{ucs} % Extended unicode (utf-8) support
+    \usepackage[utf8x]{inputenc} % Allow utf-8 characters in the tex document
+    \usepackage{fancyvrb} % verbatim replacement that allows latex
+    \usepackage{grffile} % extends the file name processing of package graphics 
+                         % to support a larger range 
+    % The hyperref package gives us a pdf with properly built
+    % internal navigation ('pdf bookmarks' for the table of contents,
+    % internal cross-reference links, web links for URLs, etc.)
+    \usepackage{hyperref}
+    \usepackage{longtable} % longtable support required by pandoc >1.10
+    \usepackage{booktabs}  % table support for pandoc > 1.12.2
+    \usepackage[normalem]{ulem} % ulem is needed to support strikethroughs (\sout)
+                                % normalem makes italics be italics, not underlines
+((* endblock packages *))
+
+
+
+((* block commands *))
+    ((* if "kgcoe" in nb.metadata *))        
+        \newcommand{\classCode}{((( nb.metadata["kgcoe"]["classCode"] )))}
+        \newcommand{\className}{((( nb.metadata["kgcoe"]["className"] )))}
+        \newcommand{\exerciseNumber}{((( nb.metadata["kgcoe"]["exerciseNumber"] )))}
+        \newcommand{\exerciseDescription}{((( nb.metadata["kgcoe"]["exerciseDescription"] )))}
+        \newcommand{\name}{((( nb.metadata["kgcoe"]["name"] )))}
+        \newcommand{\partnerName}{((( nb.metadata["kgcoe"]["partnerName"] )))}
+        \newcommand{\dateDone}{((( nb.metadata["kgcoe"]["dateDone"] )))}
+        \newcommand{\dateSubmitted}{((( nb.metadata["kgcoe"]["dateSubmitted"] )))}
+        \newcommand{\LabSectionNum}{((( nb.metadata["kgcoe"]["LabSectionNum"] )))}
+        \newcommand{\LabInstructor}{((( nb.metadata["kgcoe"]["LabInstructor"] )))}
+        \newcommand{\TAs}{((( nb.metadata["kgcoe"]["TAs"] )))}
+        \newcommand{\LectureSectionNum}{((( nb.metadata["kgcoe"]["LectureSectionNum"] )))}
+        \newcommand{\LectureInstructor}{((( nb.metadata["kgcoe"]["LectureInstructor"] )))}
+    ((* endif *))
+((* endblock commands *))

@@ -173,3 +173,14 @@ Pandoc will attempt to inline the image (and fail).
 
 ...
 ```
+
+# Jupyter metadata
+A Jupyter nbconvert exporter and template have also been created.
+
+In order for the converter to know the data about the document,
+metadata must be added.
+To do so, go to `Edit > Edit Metadata`.
+A window will pop up.
+All data must be under `kgcoe`.
+A sample metadata segment is under `jupyter_metadata.txt`,
+copy and paste it in on top of the other metadata and modify the data as necessary.

@@ -1,0 +1,16 @@
+  "kgcoe": {
+    "department": "CMPE",
+    "classCode": "CMPE 160",
+    "className": "DSD 1",
+    "exerciseNumber": "1",
+    "exerciseDescription": "Description here",
+    "name": "Jeff",
+    "partnerName": "Gary",
+    "dateDone": "1/2/2016",
+    "dateSubmitted": "3/4/2017",
+    "LabSectionNum": "1",
+    "LabInstructor": "Professor X",
+    "TAs": "TA one TA two",
+    "LectureSectionNum": "1",
+    "LectureInstructor": "Professor Y"
+  },
