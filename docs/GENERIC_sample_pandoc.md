@@ -6,17 +6,17 @@ https://kgcoe-git.rit.edu/jgm6496/KGCOEReport_template
 department: CMPE
 classCode: CMPE 101
 className: Intro to Computer Engineering
-exerciseNumber: 1
-exerciseDescription: Sample description
 name: Your Name
 partnerName: Partner Name
-dateDone: Date of lab
-dateSubmitted: Date due by
 LabSectionNum: For the lab
 LabInstructor: Mr. Instructor
 TAs: TA One and TA Two and TA Three
 LectureSectionNum: For the lecture
 LectureInstructor: Mr. Lecturer
+exerciseNumber: 1
+exerciseDescription: Sample description
+dateDone: Date of lab
+dateSubmitted: Date due by
 
 documentclass: KGCOEReport
 numbersections: false
