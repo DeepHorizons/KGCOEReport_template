@@ -1,6 +1,6 @@
 [comment]: <> (
 A skeleton document for writing reports in Markdown
-https://kgcoe-git.rit.edu/jgm6496/KGCOEReport_template
+https://github.com/DeepHorizons/KGCOEReport_template
 )
 ---
 department: CMPE
